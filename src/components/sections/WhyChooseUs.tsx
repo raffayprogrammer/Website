@@ -1,8 +1,10 @@
+/* Section 3.7 — Why Choose [Company Name]
+   Six differentiators with spec-verbatim copy. */
 const reasons = [
   {
     icon: "🎓",
     title: "Certified Expertise",
-    desc: "AAPC-certified coders, RCM specialists, and healthcare billing experts with decades of combined experience across 30+ medical specialties.",
+    desc: "Our team of AAPC-certified coders, RCM specialists, and healthcare billing experts brings decades of combined experience across 30+ medical specialties.",
   },
   {
     icon: "🔒",
@@ -12,17 +14,17 @@ const reasons = [
   {
     icon: "🤖",
     title: "Technology-Powered",
-    desc: "AI-assisted coding tools, automated eligibility verification, and real-time denial tracking to outperform traditional billing teams.",
+    desc: "We leverage AI-assisted coding tools, automated eligibility verification, and real-time denial tracking to outperform traditional billing teams.",
   },
   {
     icon: "📊",
     title: "Transparent Reporting",
-    desc: "Live dashboards give you instant visibility into claims status, collections, and denial trends — 24/7, from any device.",
+    desc: "You always know where your money is. Our live dashboards give you instant visibility into claims status, collections, and denial trends.",
   },
   {
     icon: "💼",
     title: "No Revenue, No Fee",
-    desc: "Performance-based pricing means we succeed only when you succeed. No hidden fees, no surprises, no long-term contracts.",
+    desc: "Our performance-based pricing model means we succeed only when you succeed. No hidden fees, no surprises.",
   },
   {
     icon: "🏥",
@@ -41,7 +43,7 @@ export default function WhyChooseUs() {
             <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-3">
               Why Choose Us
             </p>
-            <h2 className="text-4xl font-bold text-navy font-[family-name:var(--font-poppins)] mb-6 leading-tight">
+            <h2 className="t-h2-section font-[family-name:var(--font-poppins)] mb-6">
               The Smart Choice for Healthcare Revenue
             </h2>
             <p className="text-body leading-relaxed mb-8">
