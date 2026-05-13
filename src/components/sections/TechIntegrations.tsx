@@ -1,15 +1,19 @@
 import Link from "next/link";
 
+/* Section 3.11 — Technology Section
+   Spec-exact category labels and integration partner ordering. */
 const integrations = {
-  "EHR / EMR Systems": [
+  "EHR/EMR Integrations": [
     "Epic", "Cerner", "Athenahealth", "eClinicalWorks", "Kareo",
-    "DrChrono", "Practice Fusion", "NextGen", "Meditech", "Allscripts", "ModMed",
+    "DrChrono", "Practice Fusion", "NextGen Healthcare", "Greenway Health",
+    "Meditech", "Allscripts", "ModMed",
   ],
-  "Practice Management": [
-    "AdvancedMD", "Brightree", "CollaborateMD", "Office Ally", "WebPT", "NueMD",
+  "Practice Management Systems": [
+    "AdvancedMD", "Brightree", "CollaborateMD", "Lytec",
+    "NueMD", "Office Ally", "WebPT",
   ],
   "Clearinghouses": [
-    "Change Healthcare", "Availity", "Waystar", "Optum360", "Trizetto",
+    "Change Healthcare", "Availity", "Waystar", "Optum360", "Trizetto", "Emdeon",
   ],
 };
 
@@ -21,7 +25,7 @@ export default function TechIntegrations() {
           <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-3">
             Technology
           </p>
-          <h2 className="text-4xl font-bold text-navy font-[family-name:var(--font-poppins)] mb-4">
+          <h2 className="t-h2-section font-[family-name:var(--font-poppins)] mb-4">
             Powered by Cutting-Edge RCM Technology
           </h2>
           <p className="text-body max-w-2xl mx-auto">
@@ -34,13 +38,13 @@ export default function TechIntegrations() {
           {Object.entries(integrations).map(([category, names]) => (
             <div key={category}>
               <h3 className="text-navy font-semibold text-sm uppercase tracking-widest mb-4">
-                {category}
+                {category}:
               </h3>
               <div className="flex flex-wrap gap-3">
                 {names.map((name) => (
                   <div
                     key={name}
-                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 text-sm font-medium text-charcoal hover:border-cyan hover:text-cyan transition-colors cursor-default"
+                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 text-sm font-medium text-charcoal hover:border-cyan hover:text-cyan transition-colors cursor-default shadow-card"
                   >
                     {name}
                   </div>
@@ -52,10 +56,10 @@ export default function TechIntegrations() {
 
         <div className="text-center mt-10">
           <Link
-            href="/technology"
-            className="inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold px-6 py-3 rounded-lg hover:bg-navy hover:text-white transition-colors"
+            href="/technology/integrations"
+            className="inline-flex items-center gap-2 border-2 border-navy text-navy t-cta px-6 py-3 rounded-lg hover:bg-navy hover:text-white transition-colors"
           >
-            See All Integrations →
+            ▶ See All Integrations →
           </Link>
         </div>
       </div>

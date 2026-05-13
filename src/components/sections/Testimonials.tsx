@@ -33,7 +33,7 @@ export default function Testimonials() {
           <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-3">
             Client Results
           </p>
-          <h2 className="text-4xl font-bold text-navy font-[family-name:var(--font-poppins)] mb-4">
+          <h2 className="t-h2-section font-[family-name:var(--font-poppins)] mb-4">
             Trusted by Healthcare Providers Nationwide
           </h2>
           <p className="text-body max-w-xl mx-auto">
