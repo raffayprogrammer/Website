@@ -18,7 +18,7 @@ export default function ValueProp() {
             <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-3">
               Why It Matters
             </p>
-            <h2 className="text-4xl font-bold text-navy mb-6 font-[family-name:var(--font-poppins)] leading-tight">
+            <h2 className="t-h2-section mb-6 font-[family-name:var(--font-poppins)]">
               Your Revenue Cycle Deserves Better
             </h2>
             <p className="text-body text-base leading-relaxed mb-6">
@@ -48,9 +48,9 @@ export default function ValueProp() {
             </ul>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 bg-navy text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-mid transition-colors"
+              className="inline-flex items-center gap-2 bg-navy text-white t-cta px-6 py-3 rounded-lg hover:bg-blue-mid transition-colors"
             >
-              Discover Our Services →
+              ▶ Discover Our Services →
             </Link>
           </div>
 
