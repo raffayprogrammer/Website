@@ -64,14 +64,31 @@ h4 { font-weight: 600; }
   animation: countUp 0.6s ease-out forwards;
 }
 
-/* Card hover lift */
+/* Card shadow — matches Section 2.3 spec exactly */
+.shadow-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Card hover lift — matches Section 2.3 spec exactly */
 .card-hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   border-left-color: #00A9CE;
+}
+
+/* Logo strip — grayscale to color on hover */
+.logo-mono {
+  filter: grayscale(100%);
+  opacity: 0.55;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.logo-mono:hover {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 /* Accordion */
