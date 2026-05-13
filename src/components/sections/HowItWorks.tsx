@@ -33,7 +33,7 @@ const steps = [
     num: "06",
     title: "Ongoing Optimization",
     desc: "We continuously monitor payer trends, code updates, and denial patterns to keep your revenue maximized.",
-    icon: "🔁",
+    icon: "🔄",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function HowItWorks() {
           <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-3">
             Simple Process
           </p>
-          <h2 className="text-4xl font-bold text-navy font-[family-name:var(--font-poppins)] mb-4">
+          <h2 className="t-h2-section font-[family-name:var(--font-poppins)] mb-4">
             Your Path to a Healthier Revenue Cycle
           </h2>
           <p className="text-body max-w-xl mx-auto">
