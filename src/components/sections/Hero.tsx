@@ -27,7 +27,7 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-[family-name:var(--font-poppins)]">
+          <h1 className="t-h1-hero text-white mb-6 font-[family-name:var(--font-poppins)]">
             Stop Losing Revenue.
             <br />
             <span className="text-cyan">Start Maximizing It.</span>
@@ -44,13 +44,13 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4 mb-14">
             <Link
               href="/free-audit"
-              className="bg-cyan text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-[#0090B0] transition-colors text-base"
+              className="bg-cyan text-white t-cta px-7 py-3.5 rounded-lg hover:bg-[#0090B0] transition-colors"
             >
               ▶ Get Your Free Revenue Audit
             </Link>
             <Link
               href="/contact"
-              className="border border-white/40 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-white/10 transition-colors text-base"
+              className="border border-white/40 text-white t-cta px-7 py-3.5 rounded-lg hover:bg-white/10 transition-colors"
             >
               Schedule a Free Consultation →
             </Link>

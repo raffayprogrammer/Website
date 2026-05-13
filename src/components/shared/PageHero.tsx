@@ -40,7 +40,7 @@ export default function PageHero({
             {eyebrow}
           </p>
         )}
-        <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-5 max-w-3xl font-[family-name:var(--font-poppins)]">
+        <h1 className="t-h1-page text-white mb-5 max-w-3xl font-[family-name:var(--font-poppins)]" style={{ color: "#fff" }}>
           {title}
         </h1>
         {subtitle && (

@@ -277,7 +277,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center gap-7 text-sm font-medium text-white">
+        <nav className="hidden xl:flex items-center gap-7 t-nav text-white">
           <Link href="/" className="hover:text-cyan transition-colors py-7">
             Home
           </Link>
@@ -299,7 +299,7 @@ export default function Navbar() {
         <div className="hidden xl:flex items-center gap-3 shrink-0">
           <Link
             href="/free-audit"
-            className="bg-cyan text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#0090B0] transition-colors"
+            className="bg-cyan text-white t-cta px-5 py-2.5 rounded-lg hover:bg-[#0090B0] transition-colors"
           >
             Get Free Audit →
           </Link>
