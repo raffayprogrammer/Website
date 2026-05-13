@@ -21,7 +21,7 @@ export default function HipaaSection() {
             <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-3">
               Data Security
             </p>
-            <h2 className="text-4xl font-bold text-white font-[family-name:var(--font-poppins)] mb-6 leading-tight">
+            <h2 className="t-h2-section text-white font-[family-name:var(--font-poppins)] mb-6" style={{ color: "#fff" }}>
               Your Data.{" "}
               <span className="text-cyan">Protected. Always.</span>
             </h2>
@@ -33,9 +33,9 @@ export default function HipaaSection() {
             </p>
             <Link
               href="/technology/hipaa-compliance"
-              className="inline-flex items-center gap-2 bg-cyan text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#0090B0] transition-colors"
+              className="inline-flex items-center gap-2 bg-cyan text-white t-cta px-6 py-3 rounded-lg hover:bg-[#0090B0] transition-colors"
             >
-              View Our HIPAA Compliance Policy →
+              ▶ View Our HIPAA Compliance Policy →
             </Link>
           </div>
 
