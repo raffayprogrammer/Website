@@ -1,16 +1,30 @@
 import Link from "next/link";
 
+/* Section 3.5 — Services Highlight Grid
+   All 11 services with spec-exact 1-line descriptions and icon suggestions.
+   Icon suggestions from spec mapped to closest emoji equivalents:
+   Medical Billing       → Invoice/document     → 📄
+   Medical Coding        → Code brackets        → ⟨/⟩ (rendered as text)
+   RCM                   → Circular arrows      → 🔄
+   Denial Management     → Shield/alert         → 🛡️
+   Credentialing         → Certificate/badge    → 📜
+   AR Recovery           → Cash/recovery        → 💰
+   Eligibility Verif.    → Checkmark/person     → ✅
+   Prior Authorization   → Lock/approval        → 🔐
+   Charge Entry          → Plus/data entry      → ➕
+   Payment Posting       → Receipt/posting      → 🧾
+   Virtual Medical Asst. → Headset/person       → 🎧 */
 const services = [
   {
-    icon: "🧾",
+    icon: "📄",
     title: "Medical Billing",
     desc: "Accurate, compliant claims submission with faster reimbursements",
     href: "/services/medical-billing",
   },
   {
-    icon: "💻",
+    icon: "</>",
     title: "Medical Coding",
-    desc: "ICD-10, CPT, HCPCS coding by AAPC/AHIMA certified coders for maximum accuracy",
+    desc: "ICD-10, CPT, HCPCS coding by certified coders for maximum accuracy",
     href: "/services/medical-coding",
   },
   {
@@ -77,7 +91,7 @@ export default function ServicesGrid() {
           <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-3">
             Our Services
           </p>
-          <h2 className="text-4xl font-bold text-navy font-[family-name:var(--font-poppins)] mb-4">
+          <h2 className="t-h2-section font-[family-name:var(--font-poppins)] mb-4">
             Everything Your Revenue Cycle Needs
           </h2>
           <p className="text-body max-w-2xl mx-auto">
@@ -93,7 +107,7 @@ export default function ServicesGrid() {
               href={s.href}
               className="group bg-white border-l-4 border-l-transparent border border-gray-100 rounded-xl p-6 card-hover shadow-sm flex flex-col gap-3"
             >
-              <div className="text-3xl">{s.icon}</div>
+              <div className="text-3xl font-mono text-navy">{s.icon}</div>
               <h3 className="font-bold text-navy text-lg font-[family-name:var(--font-poppins)]">
                 {s.title}
               </h3>
@@ -108,9 +122,9 @@ export default function ServicesGrid() {
         <div className="text-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold px-6 py-3 rounded-lg hover:bg-navy hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 border-2 border-navy text-navy t-cta px-6 py-3 rounded-lg hover:bg-navy hover:text-white transition-colors"
           >
-            View All Services →
+            ▶ View All Services →
           </Link>
         </div>
       </div>
