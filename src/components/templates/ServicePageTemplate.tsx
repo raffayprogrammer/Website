@@ -5,6 +5,21 @@ import CtaBanner from "@/components/shared/CtaBanner";
 import type { ServiceData } from "@/data/services";
 import { services } from "@/data/services";
 
+/* Section 6 — Individual Service Pages
+   Template structure (10 sections per spec):
+   1. Hero  2. Pain Points  3. Our Solution  4. Process/Workflow
+   5. Key Deliverables  6. KPIs & Results  7. Who This Is For
+   8. Why Choose Us  9. CTA  10. Related Services */
+
+const whyChooseUsReasons = [
+  { icon: "🎓", title: "Certified Specialists", desc: "AAPC & AHIMA certified team with deep specialty expertise." },
+  { icon: "⚡", title: "Fast Turnaround", desc: "24–48 hour processing on most workflows, with no compromise on accuracy." },
+  { icon: "📊", title: "Real-Time Reporting", desc: "Live dashboard access so you always know exactly where you stand." },
+  { icon: "🔒", title: "HIPAA-First", desc: "Every workflow built around HIPAA compliance, BAA included." },
+  { icon: "👤", title: "Dedicated Account Manager", desc: "A named expert as your primary contact — not a call center." },
+  { icon: "💰", title: "Performance-Based Pricing", desc: "We succeed only when you succeed — no hidden fees." },
+];
+
 export default function ServicePageTemplate({ data }: { data: ServiceData }) {
   const relatedServices = data.related
     .map((slug) => services[slug])
@@ -12,6 +27,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
 
   return (
     <PageLayout>
+      {/* 1. Hero */}
       <PageHero
         eyebrow={data.title}
         title={data.heroHeadline}
@@ -20,19 +36,19 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
           { label: "Services", href: "/services" },
           { label: data.title },
         ]}
-        ctaLabel={`Get a Free ${data.title} Consultation →`}
+        ctaLabel={`▶ Get a Free ${data.title} Consultation →`}
         secondaryCtaLabel="Talk to an Expert"
         secondaryCtaHref="/contact"
       />
 
-      {/* Pain Points */}
+      {/* 2. Pain Points */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
               The Problem
             </p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy font-[family-name:var(--font-poppins)]">
+            <h2 className="t-h2-section font-[family-name:var(--font-poppins)]">
               Are You Struggling With...
             </h2>
           </div>
@@ -40,7 +56,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
             {data.painPoints.map((pp) => (
               <div
                 key={pp}
-                className="bg-ice border-l-4 border-l-amber rounded-xl p-5 flex items-start gap-3"
+                className="bg-ice border-l-4 border-l-amber rounded-xl p-5 flex items-start gap-3 shadow-card"
               >
                 <span className="text-amber text-xl shrink-0">⚠</span>
                 <p className="text-charcoal text-sm font-medium leading-relaxed">{pp}</p>
@@ -50,51 +66,30 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         </div>
       </section>
 
-      {/* Solution */}
+      {/* 3. Our Solution */}
       <section className="py-16 bg-ice">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
-                Our Solution
-              </p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-navy font-[family-name:var(--font-poppins)] mb-6 leading-tight">
-                {data.solutionTitle}
-              </h2>
-              <p className="text-body leading-relaxed">{data.solutionBody}</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-              <div className="text-6xl mb-4">{data.icon}</div>
-              <h3 className="text-navy font-bold text-lg mb-3 font-[family-name:var(--font-poppins)]">
-                Why [Company Name] for {data.title}?
-              </h3>
-              <ul className="space-y-2">
-                {[
-                  "AAPC & AHIMA certified specialists",
-                  "Specialty-specific expertise",
-                  "Dedicated account manager",
-                  "Real-time reporting dashboard",
-                  "HIPAA-compliant operations",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-charcoal">
-                    <span className="text-teal font-bold">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
+            Our Solution
+          </p>
+          <h2 className="t-h2-section font-[family-name:var(--font-poppins)] mb-6">
+            {data.solutionTitle}
+          </h2>
+          <div className="text-7xl mb-5">{data.icon}</div>
+          <p className="text-body leading-relaxed text-base max-w-3xl mx-auto">
+            {data.solutionBody}
+          </p>
         </div>
       </section>
 
-      {/* Workflow */}
+      {/* 4. Process / Workflow */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
               Our Process
             </p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy font-[family-name:var(--font-poppins)]">
+            <h2 className="t-h2-section font-[family-name:var(--font-poppins)]">
               How It Works
             </h2>
           </div>
@@ -121,14 +116,14 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         </div>
       </section>
 
-      {/* Deliverables */}
+      {/* 5. Key Deliverables */}
       <section className="py-16 bg-ice">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
               Deliverables
             </p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy font-[family-name:var(--font-poppins)]">
+            <h2 className="t-h2-section font-[family-name:var(--font-poppins)]">
               What You Receive
             </h2>
           </div>
@@ -136,7 +131,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
             {data.deliverables.map((d) => (
               <div
                 key={d}
-                className="bg-white rounded-xl p-5 flex items-start gap-3 border border-gray-100 shadow-sm"
+                className="bg-white rounded-xl p-5 flex items-start gap-3 border border-gray-100 shadow-card"
               >
                 <span className="w-6 h-6 bg-teal rounded-full flex items-center justify-center shrink-0 mt-0.5">
                   <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,7 +145,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         </div>
       </section>
 
-      {/* KPIs */}
+      {/* 6. KPIs & Results (conditional) */}
       {data.kpis && (
         <section className="py-16 bg-navy">
           <div className="max-w-5xl mx-auto px-4">
@@ -158,7 +153,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
               <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
                 Performance Metrics
               </p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white font-[family-name:var(--font-poppins)]">
+              <h2 className="t-h2-section text-white font-[family-name:var(--font-poppins)]" style={{ color: "#fff" }}>
                 KPIs We Target
               </h2>
             </div>
@@ -183,14 +178,14 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         </section>
       )}
 
-      {/* Who This Is For */}
+      {/* 7. Who This Is For */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
               Who This Is For
             </p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy font-[family-name:var(--font-poppins)]">
+            <h2 className="t-h2-section font-[family-name:var(--font-poppins)]">
               Designed for Your Practice
             </h2>
           </div>
@@ -207,15 +202,53 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         </div>
       </section>
 
-      {/* Related Services */}
+      {/* 8. Why Choose Us (for this service) */}
+      <section className="py-16 bg-ice">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
+              Our Differentiators
+            </p>
+            <h2 className="t-h2-section font-[family-name:var(--font-poppins)]">
+              Why Choose [Company Name] for {data.title}
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {whyChooseUsReasons.map((r) => (
+              <div
+                key={r.title}
+                className="bg-white rounded-xl p-6 card-hover border-l-4 border-l-cyan border border-gray-100 shadow-card"
+              >
+                <div className="text-3xl mb-3">{r.icon}</div>
+                <h3 className="font-bold text-navy text-base font-[family-name:var(--font-poppins)] mb-2">
+                  {r.title}
+                </h3>
+                <p className="text-body text-sm leading-relaxed">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. CTA */}
+      <CtaBanner
+        title={`Ready to Transform Your ${data.title}?`}
+        subtitle="Get a free consultation with one of our RCM specialists and see how much revenue you could recover."
+        primaryLabel={`▶ Get a Free ${data.title} Audit →`}
+        primaryHref="/free-audit"
+        secondaryLabel="▶ Talk to an Expert →"
+        secondaryHref="/contact"
+      />
+
+      {/* 10. Related Services */}
       {relatedServices.length > 0 && (
-        <section className="py-16 bg-ice">
+        <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-10">
               <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
                 Related Services
               </p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-navy font-[family-name:var(--font-poppins)]">
+              <h2 className="t-h2-section font-[family-name:var(--font-poppins)]">
                 Pair With These Services
               </h2>
             </div>
@@ -224,7 +257,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="bg-white border border-gray-100 rounded-xl p-6 card-hover border-l-4 border-l-cyan group block"
+                  className="bg-ice border border-gray-100 rounded-xl p-6 card-hover border-l-4 border-l-cyan group block"
                 >
                   <div className="text-3xl mb-3">{s.icon}</div>
                   <h3 className="font-bold text-navy text-base font-[family-name:var(--font-poppins)] mb-2">
@@ -239,11 +272,6 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
           </div>
         </section>
       )}
-
-      <CtaBanner
-        title={`Ready to Transform Your ${data.title}?`}
-        subtitle="Get a free consultation with one of our RCM specialists and see how much revenue you could recover."
-      />
     </PageLayout>
   );
 }
