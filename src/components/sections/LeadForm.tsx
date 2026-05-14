@@ -1,12 +1,46 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
+/* Section 3.12 — Lead Capture Section
+   Specialty dropdown: 30+ options per spec. */
 const specialties = [
-  "Primary Care / Family Medicine", "Internal Medicine", "Cardiology",
-  "Orthopedics", "Behavioral Health / Psychiatry", "Telehealth",
-  "Urgent Care", "Radiology", "Physical Therapy", "Dermatology",
-  "Gastroenterology", "OB/GYN", "Neurology", "Pediatrics",
-  "Ambulatory Surgery Center", "Hospital / Health System", "Other",
+  "Primary Care / Family Medicine",
+  "Internal Medicine",
+  "Cardiology",
+  "Orthopedics & Sports Medicine",
+  "Behavioral Health / Psychiatry",
+  "Telehealth / Virtual Care",
+  "Urgent Care",
+  "Radiology & Imaging",
+  "Physical Therapy & Rehabilitation",
+  "Dermatology",
+  "Gastroenterology",
+  "OB/GYN",
+  "Neurology",
+  "Pediatrics",
+  "Endocrinology",
+  "Pulmonology",
+  "Nephrology",
+  "Rheumatology",
+  "Ophthalmology",
+  "ENT / Otolaryngology",
+  "Urology",
+  "Oncology / Hematology",
+  "Pain Management",
+  "Sleep Medicine",
+  "Allergy & Immunology",
+  "Wound Care",
+  "Podiatry",
+  "Chiropractic",
+  "Anesthesiology",
+  "Pathology",
+  "Emergency Medicine",
+  "Ambulatory Surgery Center (ASC)",
+  "Hospital / Health System",
+  "FQHC / Community Health",
+  "Dental",
+  "Other",
 ];
 
 const painPoints = [
@@ -329,15 +363,24 @@ export default function LeadForm() {
                       type="submit"
                       className="flex-1 bg-cyan text-white t-cta py-3 rounded-lg hover:bg-[#0090B0] transition-colors"
                     >
-                      Get My Free Audit →
+                      ▶ Get My Free Audit →
                     </button>
                   )}
                 </div>
 
-                {/* HIPAA notice — directly below submit */}
+                {/* HIPAA notice — directly below submit (per spec 3.12) */}
                 <p className="text-xs text-body text-center mt-4 leading-relaxed">
-                  🔒 Your information is secure and protected under HIPAA guidelines.
-                  We will never share your data with third parties.
+                  🔒 Your information is secure and protected under HIPAA
+                  guidelines. We will never share your data with third parties.
+                  By submitting this form, you agree to our{" "}
+                  <Link href="/privacy-policy" className="text-cyan hover:underline">
+                    Privacy Policy
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/terms-and-conditions" className="text-cyan hover:underline">
+                    Terms of Service
+                  </Link>
+                  .
                 </p>
               </form>
             )}
