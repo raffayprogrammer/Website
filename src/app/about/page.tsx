@@ -5,9 +5,15 @@ import PageHero from "@/components/shared/PageHero";
 import CtaBanner from "@/components/shared/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "About [Company Name] | Expert Medical Billing & RCM Company",
+  title: "About [Company Name] | Expert Medical Billing & RCM Company | USA",
   description:
-    "Learn about [Company Name] — a dedicated medical billing and revenue cycle management company with 15+ years of experience serving healthcare providers nationwide.",
+    "Learn about [Company Name] — a dedicated medical billing and revenue cycle management company with 15+ years of experience serving healthcare providers across the United States.",
+  keywords: [
+    "about medical billing company",
+    "RCM company USA",
+    "healthcare billing experts",
+    "HIPAA compliant RCM",
+  ],
 };
 
 const values = [
@@ -37,12 +43,12 @@ export default function AboutPage() {
         crumbs={[{ label: "About Us" }]}
       />
 
-      {/* Story */}
+      {/* Story (Section 4.3) */}
       <section className="py-16 bg-white" id="our-story">
         <div className="max-w-5xl mx-auto px-4">
-          <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">Our Story</p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy font-[family-name:var(--font-poppins)] mb-6 leading-tight">
-            Built by Healthcare Industry Veterans
+          <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">Company Story</p>
+          <h2 className="t-h2-section font-[family-name:var(--font-poppins)] mb-6">
+            Our Story
           </h2>
           <div className="prose text-body leading-relaxed space-y-4">
             <p>
