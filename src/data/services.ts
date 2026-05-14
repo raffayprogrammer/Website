@@ -685,16 +685,25 @@ export const services: Record<string, ServiceData> = {
     related: ["medical-billing", "accounts-receivable", "charge-entry"],
   },
 
+  /* Section 6.11 — Virtual Medical Assistants Service Page (spec-verbatim) */
   "virtual-medical-assistants": {
     slug: "virtual-medical-assistants",
     title: "Virtual Medical Assistants",
-    metaTitle: "Virtual Medical Assistants for Healthcare | Trained VMAs",
+    metaTitle: "Virtual Medical Assistants for Healthcare | Trained VMAs | [Company Name]",
     metaDesc:
-      "Trained virtual medical assistants to handle scheduling, patient communications, billing support, and administrative workflows.",
+      "Trained virtual medical assistants to handle scheduling, patient communications, billing support, and administrative workflows for your healthcare practice.",
+    keywords: [
+      "virtual medical assistant",
+      "healthcare virtual assistant",
+      "medical VMA",
+      "remote medical staff",
+      "healthcare administrative support",
+    ],
+    heroCta: "Build Your Virtual Team Today",
     icon: "🎧",
     heroHeadline: "Expand Your Team Without Expanding Your Overhead",
     heroSubheadline:
-      "Staffing shortages are one of the biggest challenges facing healthcare practices today. Our Virtual Medical Assistants (VMAs) provide fully trained, HIPAA-compliant administrative support — at a fraction of the cost of in-house hires.",
+      "Staffing shortages are one of the biggest challenges facing healthcare practices today. [Company Name]'s Virtual Medical Assistants (VMAs) provide fully trained, HIPAA-compliant administrative support — at a fraction of the cost of in-house hires.",
     painPoints: [
       "Front-desk staff overwhelmed with admin tasks",
       "High in-house staff turnover and recruiting cost",
@@ -711,14 +720,29 @@ export const services: Record<string, ServiceData> = {
       { step: "4", activity: "Weekly QA reviews and feedback" },
       { step: "5", activity: "Scalable team adds/removes within days" },
     ],
+    deliverablesTitle: "VMA Services Include",
     deliverables: [
-      "Patient scheduling & appointment management",
-      "Insurance verification & pre-auth support",
+      "Patient scheduling and appointment management",
+      "Insurance verification and pre-authorization support",
       "Patient intake and registration",
-      "Medical records requests & referral coordination",
+      "Medical records requests and management",
+      "Referral coordination",
+      "Billing follow-up support",
+      "Patient communication (calls, emails, portal messages)",
       "Prescription refill request routing",
-      "Patient calls, emails, and portal messages",
-      "General administrative support",
+      "Prior authorization initiation",
+      "General administrative and clerical support",
+    ],
+    kpisEyebrow: "In-House vs. VMA",
+    kpisTitle: "VMA Advantages",
+    kpisColumns: { kpi: "Feature", industry: "In-House Staff", target: "[Company Name] VMA" },
+    kpis: [
+      { kpi: "Hiring & Training Time", industry: "4–8 weeks",            target: "Ready within 1 week" },
+      { kpi: "Monthly Cost",           industry: "$4,000–$6,000+",       target: "60–70% less" },
+      { kpi: "HIPAA Compliance",       industry: "Your responsibility to train", target: "Pre-trained, BAA provided" },
+      { kpi: "Turnover Risk",          industry: "High (industry avg 30–50%)",  target: "Managed by us — no gaps" },
+      { kpi: "Scalability",            industry: "Slow / costly",        target: "Add or remove staff in days" },
+      { kpi: "Coverage Hours",         industry: "Limited to office hours", target: "Flexible / extended hours available" },
     ],
     whoFor: [
       "Practices facing staffing shortages",
