@@ -3,6 +3,9 @@ export type ServiceData = {
   title: string;
   metaTitle: string;
   metaDesc: string;
+  keywords?: string[];
+  /** Optional hero CTA label — defaults to "Get a Free {title} Consultation". */
+  heroCta?: string;
   icon: string;
   heroHeadline: string;
   heroSubheadline: string;
@@ -17,13 +20,23 @@ export type ServiceData = {
 };
 
 export const services: Record<string, ServiceData> = {
+  /* Section 6.1 — Medical Billing Service Page (spec-verbatim) */
   "medical-billing": {
     slug: "medical-billing",
     title: "Medical Billing",
-    metaTitle: "Medical Billing Services | HIPAA-Compliant | 98% Collection Rate",
+    metaTitle: "Medical Billing Services | HIPAA-Compliant | 98% Collection Rate | [Company Name]",
     metaDesc:
-      "Expert medical billing services for physician practices, clinics, and hospitals. Reduce denials, accelerate cash flow, and maximize revenue.",
-    icon: "🧾",
+      "Expert medical billing services for physician practices, clinics, and hospitals. Reduce denials, accelerate cash flow, and maximize revenue with our certified billing team.",
+    keywords: [
+      "medical billing services",
+      "outsource medical billing",
+      "physician billing",
+      "claims submission",
+      "HIPAA billing",
+      "medical billing company USA",
+    ],
+    heroCta: "Get a Free Billing Audit",
+    icon: "📄",
     heroHeadline: "Get Paid Faster. Get Paid More.",
     heroSubheadline:
       "Expert medical billing services that reduce denials, accelerate reimbursements, and maximize your practice revenue — handled by AAPC-certified billing professionals who know your specialty inside and out.",
@@ -34,20 +47,20 @@ export const services: Record<string, ServiceData> = {
       "Complex payer rules leading to costly billing errors",
       "Spending more time on billing than on patient care",
     ],
-    solutionTitle: "Your Complete Billing Department",
+    solutionTitle: "Our Medical Billing Solution",
     solutionBody:
-      "We act as your complete billing department — handling everything from claim preparation and submission to payer follow-up and payment reconciliation. Our certified billers specialize in your medical specialty and understand the specific coding, documentation, and payer requirements that drive higher, faster reimbursements.",
+      "At [Company Name], we act as your complete billing department — handling everything from claim preparation and submission to payer follow-up and payment reconciliation. Our certified billers specialize in your medical specialty and understand the specific coding, documentation, and payer requirements that drive higher, faster reimbursements.",
     workflow: [
-      { step: "1", activity: "Charge Capture & Verification — Review encounter documentation for billing completeness", timeline: "Same Day" },
-      { step: "2", activity: "Medical Coding Review — Verify or assign ICD-10/CPT/HCPCS codes", timeline: "Same Day" },
-      { step: "3", activity: "Eligibility Verification — Confirm active coverage before claim submission", timeline: "Pre-Visit" },
-      { step: "4", activity: "Claim Preparation — Build compliant CMS-1500 or UB-04 claims", timeline: "24 Hours" },
-      { step: "5", activity: "Electronic Claim Submission — Submit via clearinghouse to primary payer", timeline: "24–48 Hours" },
-      { step: "6", activity: "Claim Tracking — Monitor status via clearinghouse and payer portals", timeline: "Ongoing" },
-      { step: "7", activity: "ERA/EOB Posting — Post payments, adjustments, and patient responsibility", timeline: "Daily" },
-      { step: "8", activity: "Denial Management — Identify, appeal, and resolve denied claims", timeline: "Within 48 Hours" },
-      { step: "9", activity: "Patient Billing — Generate and manage patient statements and collections", timeline: "Per Cycle" },
-      { step: "10", activity: "Reporting — Provide weekly/monthly performance reports", timeline: "Ongoing" },
+      { step: "1",  activity: "Charge Capture & Verification — Review encounter documentation for billing completeness", timeline: "Same Day" },
+      { step: "2",  activity: "Medical Coding Review — Verify or assign ICD-10/CPT/HCPCS codes",                         timeline: "Same Day" },
+      { step: "3",  activity: "Eligibility Verification — Confirm active coverage before claim submission",              timeline: "Pre-Visit" },
+      { step: "4",  activity: "Claim Preparation — Build compliant CMS-1500 or UB-04 claims",                            timeline: "24 Hours" },
+      { step: "5",  activity: "Electronic Claim Submission — Submit via clearinghouse to primary payer",                 timeline: "24-48 Hours" },
+      { step: "6",  activity: "Claim Tracking — Monitor status via clearinghouse and payer portals",                     timeline: "Ongoing" },
+      { step: "7",  activity: "ERA/EOB Posting — Post payments, adjustments, and patient responsibility",                timeline: "Daily" },
+      { step: "8",  activity: "Denial Management — Identify, appeal, and resolve denied claims",                         timeline: "Within 48 Hours of Denial" },
+      { step: "9",  activity: "Patient Billing — Generate and manage patient statements and collections",                timeline: "Per Billing Cycle" },
+      { step: "10", activity: "Reporting — Provide weekly/monthly performance reports",                                  timeline: "Ongoing" },
     ],
     deliverables: [
       "Electronic claim submission within 24–48 hours of charge capture",

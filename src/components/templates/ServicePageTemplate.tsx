@@ -27,7 +27,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
 
   return (
     <PageLayout>
-      {/* 1. Hero */}
+      {/* 1. Hero — uses data.heroCta when provided, falls back to default */}
       <PageHero
         eyebrow={data.title}
         title={data.heroHeadline}
@@ -36,8 +36,8 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
           { label: "Services", href: "/services" },
           { label: data.title },
         ]}
-        ctaLabel={`▶ Get a Free ${data.title} Consultation →`}
-        secondaryCtaLabel="Talk to an Expert"
+        ctaLabel={`▶ ${data.heroCta ?? `Get a Free ${data.title} Consultation`} →`}
+        secondaryCtaLabel="▶ Talk to an Expert →"
         secondaryCtaHref="/contact"
       />
 
@@ -161,7 +161,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
               <div className="grid grid-cols-3 bg-white/10 text-white font-semibold text-sm px-6 py-4">
                 <div>KPI</div>
                 <div className="text-center">Industry Average</div>
-                <div className="text-right">Our Target</div>
+                <div className="text-right">[Company Name] Target</div>
               </div>
               {data.kpis.map((k) => (
                 <div
