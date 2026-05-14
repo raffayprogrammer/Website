@@ -1,21 +1,23 @@
 import Link from "next/link";
 
+/* Section 3.13 — FAQ Preview Section
+   Spec-verbatim preview answers (full versions live on /faq). */
 const faqs = [
   {
     q: "How much does medical billing outsourcing cost?",
-    a: "Our pricing is performance-based, typically ranging from 2–8% of monthly collections. No upfront fees. Final pricing is determined after a free audit based on your specialty, payer mix, and volume.",
+    a: "Our pricing is performance-based, typically ranging from 2–8% of monthly collections. No upfront fees.",
   },
   {
     q: "Do you work with my EHR system?",
-    a: "We integrate with 50+ EHR and practice management systems including Epic, Cerner, Athenahealth, eClinicalWorks, Kareo, DrChrono, NextGen, Practice Fusion, and many others. Your current workflow won't be disrupted.",
+    a: "We integrate with 50+ EHR and practice management systems. Your current workflow won't be disrupted.",
   },
   {
     q: "How long does onboarding take?",
-    a: "Most practices are fully onboarded within 5–7 business days, with dedicated support throughout. There are no gaps in claims submission during the transition.",
+    a: "Most practices are fully onboarded within 5–7 business days, with dedicated support throughout.",
   },
   {
     q: "Are you HIPAA compliant?",
-    a: "Absolutely. HIPAA compliance is built into every process, system, and communication channel we use. We sign a Business Associate Agreement (BAA) with every client before accessing any PHI.",
+    a: "Absolutely. HIPAA compliance is built into every process, system, and communication channel we use.",
   },
 ];
 
@@ -25,7 +27,7 @@ export default function FaqPreview() {
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
           <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-3">FAQ</p>
-          <h2 className="text-4xl font-bold text-navy font-[family-name:var(--font-poppins)] mb-4">
+          <h2 className="t-h2-section font-[family-name:var(--font-poppins)] mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-body">
@@ -55,9 +57,9 @@ export default function FaqPreview() {
         <div className="text-center">
           <Link
             href="/faq"
-            className="inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold px-6 py-3 rounded-lg hover:bg-navy hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 border-2 border-navy text-navy t-cta px-6 py-3 rounded-lg hover:bg-navy hover:text-white transition-colors"
           >
-            View All FAQs →
+            ▶ View All FAQs →
           </Link>
         </div>
       </div>
