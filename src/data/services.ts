@@ -17,6 +17,12 @@ export type ServiceData = {
   deliverablesTitle?: string;
   deliverables: string[];
   kpis?: { kpi: string; industry?: string; target: string }[];
+  /** Optional eyebrow above the KPI table (defaults to "Performance Metrics"). */
+  kpisEyebrow?: string;
+  /** Optional alternate H2 for the KPI section (defaults to "KPIs We Target"). */
+  kpisTitle?: string;
+  /** Optional alternate column headers for the KPI table. */
+  kpisColumns?: { kpi: string; industry?: string; target: string };
   whoFor: string[];
   related: string[];
 };
@@ -295,12 +301,22 @@ export const services: Record<string, ServiceData> = {
     related: ["medical-billing", "accounts-receivable", "prior-authorization"],
   },
 
+  /* Section 6.5 — Provider Credentialing Service Page (spec-verbatim) */
   credentialing: {
     slug: "credentialing",
     title: "Provider Credentialing",
-    metaTitle: "Provider Credentialing Services | Insurance Enrollment",
+    metaTitle: "Provider Credentialing Services | Insurance Enrollment | [Company Name]",
     metaDesc:
-      "Fast, accurate provider credentialing and payer enrollment services. We credential your providers with all major insurance networks.",
+      "Fast, accurate provider credentialing and payer enrollment services. We credential your providers with all major insurance networks so you can start billing sooner.",
+    keywords: [
+      "provider credentialing",
+      "physician credentialing",
+      "payer enrollment",
+      "insurance credentialing",
+      "CAQH",
+      "credentialing services USA",
+    ],
+    heroCta: "Start Credentialing Now",
     icon: "📜",
     heroHeadline: "Credentialed Faster. Billing Sooner.",
     heroSubheadline:
@@ -323,19 +339,29 @@ export const services: Record<string, ServiceData> = {
       { step: "6", activity: "Contract review & rate negotiation support" },
       { step: "7", activity: "Re-credentialing calendar management" },
     ],
+    deliverablesTitle: "Credentialing Services Include",
     deliverables: [
-      "Medicare/Medicaid enrollment (CMS-855)",
-      "Commercial payer credentialing (BCBS, UHC, Aetna, Cigna, Humana)",
-      "CAQH ProView profile management",
+      "Initial payer enrollment for new providers",
+      "CAQH ProView profile setup and maintenance",
+      "Medicare and Medicaid enrollment (CMS-855)",
+      "Commercial payer credentialing and contracting",
+      "Re-credentialing and re-enrollment",
       "Hospital privileges management",
       "DEA registration support",
-      "Group practice enrollment",
+      "State license verification and tracking",
+      "NPI registry management",
+      "Group practice credentialing",
       "Telemedicine payer enrollment",
     ],
+    kpisEyebrow: "Timelines",
+    kpisTitle: "Credentialing Timeline",
+    kpisColumns: { kpi: "Payer Type", industry: "Typical Timeline", target: "Our Target" },
     kpis: [
-      { kpi: "Medicare Enrollment Time", industry: "60-90 days", target: "45-60 days" },
-      { kpi: "Commercial Payer Enrollment", industry: "45-120 days", target: "60-90 days" },
-      { kpi: "Group Practice Additions", industry: "2-4 weeks", target: "1-2 weeks" },
+      { kpi: "Medicare",                                  industry: "60–90 days",                target: "45–60 days" },
+      { kpi: "Medicaid",                                  industry: "30–90 days (state-dependent)", target: "30–60 days" },
+      { kpi: "Commercial (BCBS, Aetna, Cigna, UHC)",      industry: "45–120 days",               target: "60–90 days" },
+      { kpi: "TRICARE",                                   industry: "30–60 days",                target: "30–45 days" },
+      { kpi: "Group enrollment additions",                industry: "2–4 weeks",                 target: "1–2 weeks" },
     ],
     whoFor: [
       "New providers joining a practice",
