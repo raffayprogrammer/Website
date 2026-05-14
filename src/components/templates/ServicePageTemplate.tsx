@@ -116,15 +116,15 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         </div>
       </section>
 
-      {/* 5. Key Deliverables */}
+      {/* 5. Key Deliverables (or service-specific title via data.deliverablesTitle) */}
       <section className="py-16 bg-ice">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
-              Deliverables
+              {data.deliverablesTitle ? "What's Included" : "Deliverables"}
             </p>
             <h2 className="t-h2-section font-[family-name:var(--font-poppins)]">
-              What You Receive
+              {data.deliverablesTitle ?? "What You Receive"}
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -145,38 +145,44 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         </div>
       </section>
 
-      {/* 6. KPIs & Results (conditional) */}
-      {data.kpis && (
-        <section className="py-16 bg-navy">
-          <div className="max-w-5xl mx-auto px-4">
-            <div className="text-center mb-10">
-              <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
-                Performance Metrics
-              </p>
-              <h2 className="t-h2-section text-white font-[family-name:var(--font-poppins)]" style={{ color: "#fff" }}>
-                KPIs We Target
-              </h2>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
-              <div className="grid grid-cols-3 bg-white/10 text-white font-semibold text-sm px-6 py-4">
-                <div>KPI</div>
-                <div className="text-center">Industry Average</div>
-                <div className="text-right">[Company Name] Target</div>
+      {/* 6. KPIs & Results (conditional, 2-col or 3-col based on whether industry data is provided) */}
+      {data.kpis && data.kpis.length > 0 && (() => {
+        const showIndustry = data.kpis.some((k) => k.industry && k.industry.trim() !== "");
+        const cols = showIndustry ? "grid-cols-3" : "grid-cols-2";
+        return (
+          <section className="py-16 bg-navy">
+            <div className="max-w-5xl mx-auto px-4">
+              <div className="text-center mb-10">
+                <p className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
+                  Performance Metrics
+                </p>
+                <h2 className="t-h2-section text-white font-[family-name:var(--font-poppins)]" style={{ color: "#fff" }}>
+                  KPIs We Target
+                </h2>
               </div>
-              {data.kpis.map((k) => (
-                <div
-                  key={k.kpi}
-                  className="grid grid-cols-3 px-6 py-4 border-t border-white/10 text-white/90 text-sm items-center"
-                >
-                  <div className="font-medium">{k.kpi}</div>
-                  <div className="text-center text-white/60">{k.industry}</div>
-                  <div className="text-right text-cyan font-bold">{k.target}</div>
+              <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+                <div className={`grid ${cols} bg-white/10 text-white font-semibold text-sm px-6 py-4`}>
+                  <div>KPI</div>
+                  {showIndustry && <div className="text-center">Industry Average</div>}
+                  <div className="text-right">[Company Name] Target</div>
                 </div>
-              ))}
+                {data.kpis.map((k) => (
+                  <div
+                    key={k.kpi}
+                    className={`grid ${cols} px-6 py-4 border-t border-white/10 text-white/90 text-sm items-center`}
+                  >
+                    <div className="font-medium">{k.kpi}</div>
+                    {showIndustry && (
+                      <div className="text-center text-white/60">{k.industry || "—"}</div>
+                    )}
+                    <div className="text-right text-cyan font-bold">{k.target}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      )}
+          </section>
+        );
+      })()}
 
       {/* 7. Who This Is For */}
       <section className="py-16 bg-white">

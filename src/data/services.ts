@@ -13,8 +13,10 @@ export type ServiceData = {
   solutionTitle: string;
   solutionBody: string;
   workflow: { step: string; activity: string; timeline?: string }[];
+  /** Optional alternate label for the deliverables section heading. */
+  deliverablesTitle?: string;
   deliverables: string[];
-  kpis?: { kpi: string; industry: string; target: string }[];
+  kpis?: { kpi: string; industry?: string; target: string }[];
   whoFor: string[];
   related: string[];
 };
@@ -88,13 +90,23 @@ export const services: Record<string, ServiceData> = {
     related: ["medical-coding", "denial-management", "revenue-cycle-management"],
   },
 
+  /* Section 6.2 — Medical Coding Service Page (spec-verbatim) */
   "medical-coding": {
     slug: "medical-coding",
     title: "Medical Coding",
-    metaTitle: "Medical Coding Services | ICD-10, CPT, HCPCS | AAPC Certified",
+    metaTitle: "Medical Coding Services | ICD-10, CPT, HCPCS | AAPC Certified | [Company Name]",
     metaDesc:
-      "Accurate ICD-10, CPT, and HCPCS medical coding by AAPC and AHIMA certified coders. Reduce audits, maximize reimbursements.",
-    icon: "💻",
+      "Accurate ICD-10, CPT, and HCPCS medical coding by AAPC and AHIMA certified coders. Reduce audits, maximize reimbursements, and maintain compliance.",
+    keywords: [
+      "medical coding services",
+      "ICD-10 coding",
+      "CPT coding",
+      "HCPCS coding",
+      "certified medical coders",
+      "medical coding outsourcing",
+    ],
+    heroCta: "Schedule a Coding Review",
+    icon: "</>",
     heroHeadline: "Coding That Pays. Compliance That Protects.",
     heroSubheadline:
       "One wrong code costs you money and puts your practice at risk. Our AAPC and AHIMA certified medical coders deliver the accuracy, compliance, and specialty knowledge your practice demands.",
@@ -110,77 +122,104 @@ export const services: Record<string, ServiceData> = {
       "Our AAPC and AHIMA certified coders handle all code sets including ICD-10-CM, CPT, HCPCS Level II, modifiers, DRG, and risk adjustment coding. We use a dual-coding QA process for complex cases and maintain a coding accuracy rate above 98.5%.",
     workflow: [
       { step: "1", activity: "Receive clinical documentation from your EHR" },
-      { step: "2", activity: "Abstract clinical information for code assignment" },
-      { step: "3", activity: "Assign codes per specialty-specific coding guidelines" },
-      { step: "4", activity: "QA review (dual-coding for complex cases)" },
+      { step: "2", activity: "Abstracting clinical information for code assignment" },
+      { step: "3", activity: "Code assignment per specialty-specific coding guidelines" },
+      { step: "4", activity: "Quality assurance review (dual-coding for complex cases)" },
       { step: "5", activity: "Compliance check against payer-specific requirements" },
       { step: "6", activity: "Code submission to billing team or directly to payer" },
-      { step: "7", activity: "Coder audit reporting and clinical staff feedback" },
+      { step: "7", activity: "Coder audit reporting and feedback to clinical staff" },
     ],
+    deliverablesTitle: "Coding Capabilities",
     deliverables: [
-      "ICD-10-CM, CPT, HCPCS Level II coding",
-      "E/M coding (office, inpatient, telehealth)",
-      "Surgical & procedural coding (30+ specialties)",
-      "DRG coding for inpatient billing",
-      "Modifier assignment & validation",
-      "HCC Risk Adjustment for value-based care",
-      "Monthly coding audit reports",
+      "ICD-10-CM (Diagnosis Coding)",
+      "CPT (Procedure Coding)",
+      "HCPCS Level II (Supplies, DME, Drugs)",
+      "DRG (Diagnosis Related Groups — for inpatient)",
+      "E/M Coding (Office, Inpatient, Telehealth)",
+      "Modifiers (correct use to maximize reimbursements)",
+      "Risk Adjustment Coding (HCC for value-based care)",
+      "Surgical & Procedural Coding (30+ specialties)",
     ],
     kpis: [
-      { kpi: "Coding Accuracy Rate", industry: "92-95%", target: "98.5%+" },
-      { kpi: "Coder Query Rate", industry: "8-12%", target: "Under 5%" },
-      { kpi: "Audit Pass Rate (External)", industry: "85%", target: "95%+" },
+      { kpi: "Coding Accuracy Rate",              target: "98.5%+" },
+      { kpi: "Query Rate (coder-physician)",      target: "Under 5%" },
+      { kpi: "Coder Productivity (charts/hour)",  target: "Specialty-specific benchmarks met" },
+      { kpi: "Audit Pass Rate",                   target: "100% internal QA; 95%+ external audit" },
     ],
     whoFor: [
-      "Practices with complex procedural specialties",
-      "Hospitals needing inpatient DRG coding",
-      "Value-based care organizations needing HCC coding",
-      "Practices preparing for payer audits",
+      "Primary Care",
+      "Internal Medicine",
+      "Cardiology",
+      "Orthopedics",
+      "Neurology",
+      "Gastroenterology",
+      "Pulmonology",
+      "Oncology",
+      "Radiology",
+      "Pathology",
+      "Anesthesiology",
+      "Surgery (General, Vascular, Bariatric)",
+      "Psychiatry",
+      "Dermatology",
+      "OB/GYN",
+      "Pediatrics",
+      "Emergency Medicine",
+      "...and more",
     ],
     related: ["medical-billing", "denial-management", "charge-entry"],
   },
 
+  /* Section 6.3 — Revenue Cycle Management Service Page (spec-verbatim) */
   "revenue-cycle-management": {
     slug: "revenue-cycle-management",
     title: "Revenue Cycle Management",
-    metaTitle: "Revenue Cycle Management Services | End-to-End RCM",
+    metaTitle: "Revenue Cycle Management Services | End-to-End RCM | [Company Name]",
     metaDesc:
-      "Full-cycle revenue management services from patient registration to payment reconciliation. Optimize your entire revenue cycle.",
+      "Full-cycle revenue management services from patient registration to payment reconciliation. Optimize your entire revenue cycle with [Company Name]'s expert RCM team.",
+    keywords: [
+      "revenue cycle management",
+      "RCM services",
+      "end-to-end RCM",
+      "healthcare revenue cycle",
+      "outsourced RCM",
+      "physician practice RCM",
+    ],
+    heroCta: "Get a Free RCM Assessment",
     icon: "🔄",
     heroHeadline: "Transform Your Revenue Cycle from Cost Center to Revenue Engine",
     heroSubheadline:
-      "Revenue Cycle Management is not just billing. It's the complete financial health of your practice. We manage every touchpoint in your revenue cycle to ensure nothing falls through the cracks.",
+      "Revenue Cycle Management is not just billing. It's the complete financial health of your practice. [Company Name] manages every touchpoint in your revenue cycle to ensure nothing falls through the cracks.",
     painPoints: [
       "Multiple vendors creating coordination gaps",
       "Lack of visibility into financial performance",
       "Inconsistent processes across patient touchpoints",
       "No single point of accountability for revenue results",
     ],
-    solutionTitle: "One Partner. Your Entire Revenue Cycle.",
+    solutionTitle: "Full-Cycle RCM Services Include",
     solutionBody:
       "We deliver every service your practice needs — from the moment a patient schedules an appointment to the day that claim is fully adjudicated and paid. Our proprietary RCM workflow system gives you real-time visibility while we handle every stage with specialty-specific protocols.",
     workflow: [
-      { step: "1", activity: "Patient Access — Scheduling, eligibility, insurance discovery, prior auth" },
-      { step: "2", activity: "Clinical Documentation — CDI support and documentation quality review" },
-      { step: "3", activity: "Charge Capture — Entry, reconciliation, lost charge prevention" },
-      { step: "4", activity: "Claims Management — Coding, scrubbing, submission, tracking, follow-up" },
-      { step: "5", activity: "Payment Management — ERA/EOB posting, patient billing, collections" },
-      { step: "6", activity: "Denial & AR Management — Tracking, appeals, aged AR recovery" },
-      { step: "7", activity: "Analytics & Reporting — KPI dashboards, payer performance, benchmarking" },
+      { step: "1", activity: "Patient Access — Scheduling support | Eligibility verification | Insurance discovery | Prior auth" },
+      { step: "2", activity: "Clinical Documentation — Documentation quality review | CDI (Clinical Documentation Improvement) support" },
+      { step: "3", activity: "Charge Capture — Charge entry | Charge reconciliation | Lost charge prevention" },
+      { step: "4", activity: "Claims Management — Coding | Claim scrubbing | Submission | Tracking | Status follow-up" },
+      { step: "5", activity: "Payment Management — ERA/EOB posting | Patient billing | Collections | Reconciliation" },
+      { step: "6", activity: "Denial & AR Management — Denial tracking | Appeal management | Aged AR recovery" },
+      { step: "7", activity: "Analytics & Reporting — KPI dashboards | Payer performance analysis | Benchmarking" },
     ],
+    deliverablesTitle: "The [Company Name] RCM Advantage",
     deliverables: [
-      "End-to-end RCM operations across all touchpoints",
-      "Dedicated RCM manager as your primary contact",
-      "Real-time dashboard with live financial visibility",
-      "Specialty-specific RCM protocols",
-      "Continuous payer intelligence updates",
-      "Monthly executive performance reviews",
+      "Single vendor for your entire revenue cycle — no coordination gaps",
+      "Proprietary RCM workflow system with real-time visibility",
+      "Specialty-specific RCM protocols for 30+ medical specialties",
+      "Continuous payer intelligence updates built into our workflows",
+      "Dedicated RCM manager as your primary point of contact",
     ],
     kpis: [
-      { kpi: "Net Collection Rate", industry: "88-92%", target: "96-98%+" },
-      { kpi: "Days in AR", industry: "45-60 days", target: "Under 30 days" },
-      { kpi: "Cost-to-Collect Ratio", industry: "3-5%", target: "Under 2.5%" },
-      { kpi: "Total AR > 90 Days", industry: "20-25%", target: "Under 12%" },
+      { kpi: "Net Collection Rate",       industry: "88-92%",     target: "96-98%+" },
+      { kpi: "Days in AR",                industry: "45-60 days", target: "Under 30 days" },
+      { kpi: "Cost-to-Collect Ratio",     industry: "3-5%",       target: "Under 2.5%" },
+      { kpi: "Total AR > 90 Days",        industry: "20-25%",     target: "Under 12%" },
     ],
     whoFor: [
       "Practices outsourcing their entire billing operation",
