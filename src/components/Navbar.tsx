@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /*  Nav data                                                                  */
@@ -250,6 +251,7 @@ function MobileSection({
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -258,6 +260,7 @@ export default function Navbar() {
   }, []);
 
   const close = () => setMobileOpen(false);
+  const isActive = (href: string) => pathname === href;
 
   return (
     <header
@@ -265,20 +268,21 @@ export default function Navbar() {
         scrolled ? "shadow-lg" : "shadow-md"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-6 flex items-center h-[70px] gap-6">
-        {/* Logo — pinned left */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <div className="w-9 h-9 bg-cyan rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">RCM</span>
+      <div className="max-w-[1400px] mx-auto px-6 flex items-center h-[72px] gap-6">
+        {/* Logo — minimal mark like byredstone */}
+        <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
+          <div className="flex items-center gap-[3px]">
+            <span className="block w-2 h-7 bg-white -skew-x-12 group-hover:bg-cyan transition-colors" />
+            <span className="block w-2 h-7 bg-white -skew-x-12 group-hover:bg-cyan transition-colors" />
           </div>
-          <span className="text-white font-bold text-base font-[family-name:var(--font-poppins)] hidden sm:inline whitespace-nowrap">
+          <span className="text-white font-bold text-base font-[family-name:var(--font-poppins)] hidden sm:inline whitespace-nowrap tracking-tight">
             [Company Name]
           </span>
         </Link>
 
         {/* Desktop Nav — fills middle, centered */}
         <nav className="hidden xl:flex flex-1 items-center justify-center gap-3 text-white text-sm">
-          <Link href="/" className="hover:text-cyan transition-colors py-7 whitespace-nowrap">
+          <Link href="/" className={`hover:text-cyan transition-colors py-7 whitespace-nowrap ${isActive("/") ? "text-cyan" : ""}`}>
             Home
           </Link>
           <SimpleDropdown label="About Us" items={aboutItems} width="w-72" />
@@ -302,9 +306,9 @@ export default function Navbar() {
         <div className="hidden xl:flex items-center shrink-0 ml-auto">
           <Link
             href="/free-audit"
-            className="bg-cyan text-white px-5 py-2.5 rounded-lg hover:bg-[#0090B0] transition-colors whitespace-nowrap text-sm font-semibold"
+            className="bg-cyan text-white px-6 py-2.5 rounded-full hover:bg-[#b91c1c] transition-colors whitespace-nowrap text-sm font-semibold shadow-[0_0_20px_rgba(220,38,38,0.35)]"
           >
-            Get Free Audit →
+            Get Started
           </Link>
         </div>
 
