@@ -4,9 +4,11 @@ import PageHero from "@/components/shared/PageHero";
 import CtaBanner from "@/components/shared/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "HIPAA Compliant Medical Billing Company | [Company Name]",
+  title: "HIPAA Compliant Medical Billing Company | [Company Name] | Data Security",
   description:
     "Learn how [Company Name] maintains full HIPAA compliance across all medical billing and RCM operations. BAA available, SOC 2 compliant, PHI protected.",
+  keywords:
+    "HIPAA compliant billing company, HIPAA medical billing, healthcare data security, PHI protection, BAA medical billing",
 };
 
 const commitments = [
@@ -130,9 +132,16 @@ export default function HipaaCompliancePage() {
           <p className="text-white/80 max-w-2xl mx-auto mb-7 leading-relaxed">
             A Business Associate Agreement (BAA) is a legal contract required under HIPAA
             between a covered entity (your practice) and a business associate (us) that
-            handles PHI on your behalf. We execute a fully HIPAA-compliant BAA with every
-            client prior to accessing any patient data.
+            handles PHI on your behalf. [Company Name] executes a fully HIPAA-compliant BAA
+            with every client prior to accessing any patient data. Our BAA covers all required
+            HIPAA Privacy and Security Rule provisions.
           </p>
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-cyan text-white font-bold px-8 py-3.5 rounded-xl hover:bg-[#0090B0] transition-colors text-sm shadow-lg"
+          >
+            ▶ Request a BAA Today →
+          </a>
         </div>
       </section>
 
