@@ -12,9 +12,27 @@ export const metadata: Metadata = {
     "medical billing FAQ, RCM questions, outsource billing questions, HIPAA billing compliance questions",
 };
 
+const faqSchemaItems = Object.values(faqsByCategory)
+  .flat()
+  .map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  }));
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqSchemaItems,
+};
+
 export default function FaqPage() {
   return (
     <PageLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <PageHero
         eyebrow="FAQ"
         title="Frequently Asked Questions (30+)"
