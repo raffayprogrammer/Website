@@ -265,19 +265,19 @@ export default function Navbar() {
         scrolled ? "shadow-lg" : "shadow-md"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-[70px]">
-        {/* Logo */}
+      <div className="max-w-[1400px] mx-auto px-6 flex items-center h-[70px] gap-6">
+        {/* Logo — pinned left */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <div className="w-9 h-9 bg-cyan rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">RCM</span>
           </div>
-          <span className="text-white font-bold text-base font-[family-name:var(--font-poppins)] hidden sm:inline">
+          <span className="text-white font-bold text-base font-[family-name:var(--font-poppins)] hidden sm:inline whitespace-nowrap">
             [Company Name]
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center gap-4 t-nav text-white text-sm">
+        {/* Desktop Nav — fills middle, centered */}
+        <nav className="hidden xl:flex flex-1 items-center justify-center gap-3 text-white text-sm">
           <Link href="/" className="hover:text-cyan transition-colors py-7 whitespace-nowrap">
             Home
           </Link>
@@ -298,11 +298,11 @@ export default function Navbar() {
           <SimpleDropdown label="Contact" items={contactItems} width="w-72" />
         </nav>
 
-        {/* CTA */}
-        <div className="hidden xl:flex items-center gap-3 shrink-0">
+        {/* CTA — pinned right */}
+        <div className="hidden xl:flex items-center shrink-0 ml-auto">
           <Link
             href="/free-audit"
-            className="bg-cyan text-white t-cta px-5 py-2.5 rounded-lg hover:bg-[#0090B0] transition-colors whitespace-nowrap text-sm font-semibold"
+            className="bg-cyan text-white px-5 py-2.5 rounded-lg hover:bg-[#0090B0] transition-colors whitespace-nowrap text-sm font-semibold"
           >
             Get Free Audit →
           </Link>
