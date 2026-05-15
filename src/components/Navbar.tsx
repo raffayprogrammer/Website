@@ -289,6 +289,9 @@ export default function Navbar() {
           </Link>
           <SimpleDropdown label="Technology" items={technologyItems} width="w-72" />
           <SimpleDropdown label="Resources" items={resourcesItems} width="w-72" />
+          <Link href="/pricing" className="hover:text-cyan transition-colors py-7">
+            Pricing
+          </Link>
           <Link href="/careers" className="hover:text-cyan transition-colors py-7">
             Careers
           </Link>
@@ -337,6 +340,9 @@ export default function Navbar() {
           </Link>
           <MobileSection label="Technology" items={technologyItems} onClose={close} />
           <MobileSection label="Resources" items={resourcesItems} onClose={close} />
+          <Link href="/pricing" onClick={close} className="py-2 border-b border-white/10">
+            Pricing
+          </Link>
           <Link href="/careers" onClick={close} className="py-2 border-b border-white/10">
             Careers
           </Link>
