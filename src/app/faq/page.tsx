@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   title: "Medical Billing & RCM FAQs | [Company Name]",
   description:
     "Answers to the most common questions about medical billing outsourcing, pricing, HIPAA compliance, EHR integrations, turnaround times, and revenue cycle management.",
+  keywords:
+    "medical billing FAQ, RCM questions, outsource billing questions, HIPAA billing compliance questions",
 };
 
 export default function FaqPage() {
@@ -15,21 +17,28 @@ export default function FaqPage() {
     <PageLayout>
       <PageHero
         eyebrow="FAQ"
-        title="Frequently Asked Questions"
+        title="Frequently Asked Questions (30+)"
         subtitle="Answers to the most common questions about medical billing outsourcing, pricing, HIPAA compliance, integrations, turnaround, and more. Don't see your question? Contact us anytime."
         crumbs={[{ label: "FAQ" }]}
+        ctaLabel="Ask Us Anything →"
+        ctaHref="/contact"
+        secondaryCtaLabel="Get a Free Audit"
+        secondaryCtaHref="/free-audit"
       />
 
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 space-y-10">
+        <div className="max-w-4xl mx-auto px-4 space-y-12">
           {Object.entries(faqsByCategory).map(([category, faqs]) => (
             <div key={category}>
-              <h2 className="text-cyan font-semibold uppercase tracking-widest text-sm mb-2">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-cyan font-semibold uppercase tracking-widest text-xs">
+                  Category
+                </span>
+                <span className="h-px flex-1 bg-gray-100" />
+              </div>
+              <h2 className="text-2xl font-bold text-navy font-[family-name:var(--font-poppins)] mb-5">
                 {category}
               </h2>
-              <h3 className="text-2xl font-bold text-navy font-[family-name:var(--font-poppins)] mb-5">
-                {category} Questions
-              </h3>
               <div className="space-y-3">
                 {faqs.map((faq) => (
                   <details
