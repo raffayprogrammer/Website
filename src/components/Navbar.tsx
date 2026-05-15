@@ -82,7 +82,7 @@ function SimpleDropdown({
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <button className="hover:text-cyan transition-colors flex items-center gap-1 py-7">
+      <button className="hover:text-cyan transition-colors flex items-center gap-1 py-7 whitespace-nowrap">
         {label}
         <svg
           className={`w-3 h-3 mt-0.5 transition-transform ${open ? "rotate-180" : ""}`}
@@ -130,7 +130,7 @@ function ServicesMegaMenu() {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <button className="hover:text-cyan transition-colors flex items-center gap-1 py-7">
+      <button className="hover:text-cyan transition-colors flex items-center gap-1 py-7 whitespace-nowrap">
         Services
         <svg
           className={`w-3 h-3 mt-0.5 transition-transform ${open ? "rotate-180" : ""}`}
@@ -277,22 +277,22 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center gap-7 t-nav text-white">
-          <Link href="/" className="hover:text-cyan transition-colors py-7">
+        <nav className="hidden xl:flex items-center gap-4 t-nav text-white text-sm">
+          <Link href="/" className="hover:text-cyan transition-colors py-7 whitespace-nowrap">
             Home
           </Link>
           <SimpleDropdown label="About Us" items={aboutItems} width="w-72" />
           <ServicesMegaMenu />
           <SimpleDropdown label="Industries" items={industriesItems} width="w-72" />
-          <Link href="/why-choose-us" className="hover:text-cyan transition-colors py-7">
+          <Link href="/why-choose-us" className="hover:text-cyan transition-colors py-7 whitespace-nowrap">
             Why Choose Us
           </Link>
           <SimpleDropdown label="Technology" items={technologyItems} width="w-72" />
           <SimpleDropdown label="Resources" items={resourcesItems} width="w-72" />
-          <Link href="/pricing" className="hover:text-cyan transition-colors py-7">
+          <Link href="/pricing" className="hover:text-cyan transition-colors py-7 whitespace-nowrap">
             Pricing
           </Link>
-          <Link href="/careers" className="hover:text-cyan transition-colors py-7">
+          <Link href="/careers" className="hover:text-cyan transition-colors py-7 whitespace-nowrap">
             Careers
           </Link>
           <SimpleDropdown label="Contact" items={contactItems} width="w-72" />
@@ -302,7 +302,7 @@ export default function Navbar() {
         <div className="hidden xl:flex items-center gap-3 shrink-0">
           <Link
             href="/free-audit"
-            className="bg-cyan text-white t-cta px-5 py-2.5 rounded-lg hover:bg-[#0090B0] transition-colors"
+            className="bg-cyan text-white t-cta px-5 py-2.5 rounded-lg hover:bg-[#0090B0] transition-colors whitespace-nowrap text-sm font-semibold"
           >
             Get Free Audit →
           </Link>
