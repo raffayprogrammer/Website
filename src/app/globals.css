@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy:    #1A3C6E;
-  --color-cyan:    #00A9CE;
+  --color-navy:    #111111;
+  --color-cyan:    #e53e3e;
   --color-blue-mid: #4A6FA5;
-  --color-ice:     #EAF4FB;
-  --color-charcoal:#1A1A2E;
-  --color-body:    #555555;
+  --color-ice:     #f5f5f5;
+  --color-charcoal:#111111;
+  --color-body:    #666666;
   --color-teal:    #00796B;
   --color-amber:   #E65100;
-  --color-footer:  #0D1B2A;
+  --color-footer:  #000000;
 
   --font-heading: "Poppins", "Inter", sans-serif;
   --font-body:    "Inter", "Open Sans", sans-serif;
@@ -83,7 +83,7 @@ h4 { font-weight: 600; }
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  border-left-color: #00A9CE;
+  border-left-color: #e53e3e;
 }
 
 /* Logo strip — grayscale to color on hover */
